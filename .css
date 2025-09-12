@@ -1,0 +1,18 @@
+.nossa-foto {
+    width: 350px;
+    height: auto;
+    border-radius: 20px; /* opcional, cantos levemente arredondados */
+    object-fit: contain;
+}
+.nossa-foto {
+            display: block;
+            max-width: 100%;   /* ocupa no máximo a largura da tela */
+            height: auto;      /* mantém proporção da foto */
+            border: 5px solid #fff;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+            margin: 20px auto;
+
+            /* nitidez */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
