@@ -12,19 +12,18 @@
             color: #5d4a66; 
             text-align: center;
             margin: 0;
-            /* 👇 REMOVEMOS: display: flex; flex-direction: column; align-items: center; justify-content: center; */
-            /* 👇 ALTERADO: Isso garante que a página possa rolar se o conteúdo for maior que a tela */
+            /* Corrigido: Removidas propriedades flex para permitir a rolagem */
             min-height: 100vh;
-            overflow-x: hidden; /* Mantém a rolagem horizontal desabilitada, que é o padrão */
-            padding: 20px 20px 60px 20px; /* Mais padding no final para a rolagem */
+            overflow-x: hidden; 
+            padding: 20px 20px 60px 20px;
         }
         
         .container-wrapper {
-            /* Novo wrapper para centralizar o container no layout de rolagem */
+            /* Adicionado para centralizar o container horizontalmente */
             display: flex;
-            justify-content: center; /* Centraliza o container horizontalmente */
+            justify-content: center;
             width: 100%;
-            padding-top: 50px; /* Espaço no topo */
+            padding-top: 50px; 
         }
 
         .container {
@@ -147,7 +146,7 @@
         }
         
         .heart-float {
-            position: fixed; /* Mudei de 'absolute' para 'fixed' para flutuar pela tela toda */
+            position: fixed; 
             color: #ff9aa2;
             font-size: 2em;
             pointer-events: none;
@@ -175,9 +174,9 @@
             <h2>Nossos Momentos Inesquecíveis</h2>
             
             <div class="nossas-fotos">
-                <img src="https://onedrive.live.com/personal/fdaa1189c6a8c0cd/_api/v2.1/drives/FDAA1189C6A8C0CD/items/FDAA1189C6A8C0CD!seac53aa99d854ca1b2c07a226f48006d/thumbnails/0/c955x955/content?prefer=noredirect%2Cclosestavailablesize&cb=%22c%3A%7BEAC53AA9-9D85-4CA1-B2C0-7A226F48006D%7D%2C1%22&photossw=1&eh=application%3Aonedrive+web+consumer%2Cscenario%3ABrowsePhoto&it=originalScale%3Ac512x512%2CdownloadScale%3Ac955x955%2Cmigrated%3Atrue%2CscenarioName%3ArenderPhoto" alt="Flávia, Foto 1" title="Nossa primeira foto juntos" loading="lazy">
-                <img src="https://onedrive.live.com/personal/fdaa1189c6a8c0cd/_api/v2.1/drives/FDAA1189C6A8C0CD/items/FDAA1189C6A8C0CD!s1951a96f76064f7f92a5241f1e174c69/thumbnails/0/c955x955/content?prefer=noredirect%2Cclosestavailablesize&cb=%22c%3A%7B1951A96F-7606-4F7F-92A5-241F1E174C69%7D%2C1%22&photossw=1&eh=application%3Aonedrive+web+consumer%2Cscenario%3ABrowsePhoto&it=originalScale%3Ac512x512%2CdownloadScale%3Ac955x955%2Cmigrated%3Atrue%2CscenarioName%3ArenderPhoto" alt="Flávia, Foto 2" title="Dia especial" loading="lazy">
-                <img src="https://onedrive.live.com/personal/fdaa1189c6a8c0cd/_api/v2.1/drives/FDAA1189C6A8C0CD/items/FDAA1189C6A8C0CD!se9e8d60c29644f73be4ec11b518d8d66/thumbnails/0/c955x955/content?prefer=noredirect%2Cclosestavailablesize&cb=%22c%3A%7BE9E8D60C-2964-4F73-BE4E-C11B518D8D66%7D%2C1%22&photossw=1&eh=application%3Aonedrive+web+consumer%2Cscenario%3ABrowsePhoto&it=originalScale%3Ac512x512%2CdownloadScale%3Ac955x955%2Cmigrated%3Atrue%2CscenarioName%3ArenderPhoto" alt="Flávia, Foto 3" title="Eu e você" loading="lazy">
+                <img src="https://www.dropbox.com/scl/fi/rupcgmriqmy8in80mmp3y/content.png?rlkey=8xg2460dkcor4i3m04tohl5f8&st=92sbr22v&dl=1" alt="Flávia, Nova Foto 1" title="Momento Especial com Flávia (Nova Foto 1)" loading="lazy">
+                <img src="https://www.dropbox.com/scl/fi/dis0kbt2uaikzlprrgtky/content-1.png?rlkey=mk1h0xr5i5omqrjbpjq90a26w&st=s4w59ekh&dl=1" alt="Flávia, Nova Foto 2" title="Momento Especial com Flávia (Nova Foto 2)" loading="lazy">
+                <img src="https://www.dropbox.com/scl/fi/nmfrwu5ht0q4rnltnio06/content-2.png?rlkey=ifo0fsctwkqzrwh4f44ou7nt3&st=6w0pmnhn&dl=1" alt="Flávia, Nova Foto 3" title="Momento Especial com Flávia (Nova Foto 3)" loading="lazy">
             </div>
             <p style="margin-top: 40px;">
                 Este pequeno canto é um pedacinho do meu coração para você. Ele guarda um segredo sobre o meu sentimento mais profundo. 
@@ -197,6 +196,7 @@
             </p>
         </div>
     </div>
+
     <script>
         // JavaScript para a interatividade
         function mostrarMensagem() {
