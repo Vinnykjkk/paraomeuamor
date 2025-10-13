@@ -3,151 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para o Amor da Minha Vida</title>
+    <title>💌 Flávia, Meu Porto Seguro e Meu Infinito 💖</title>
     <style>
+        /* CSS OTIMIZADO PARA PC */
         body {
-            background-color: #fce4ec; /* rosa clarinho */
-            font-family: 'Georgia', serif;
-            color: #333;
+            font-family: 'Georgia', serif; 
+            background: linear-gradient(135deg, #fdf0f2, #ffe4e8);
+            color: #5d4a66; 
             text-align: center;
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            /* 👇 REMOVEMOS: display: flex; flex-direction: column; align-items: center; justify-content: center; */
+            /* 👇 ALTERADO: Isso garante que a página possa rolar se o conteúdo for maior que a tela */
+            min-height: 100vh;
+            overflow-x: hidden; /* Mantém a rolagem horizontal desabilitada, que é o padrão */
+            padding: 20px 20px 60px 20px; /* Mais padding no final para a rolagem */
         }
+        
+        .container-wrapper {
+            /* Novo wrapper para centralizar o container no layout de rolagem */
+            display: flex;
+            justify-content: center; /* Centraliza o container horizontalmente */
+            width: 100%;
+            padding-top: 50px; /* Espaço no topo */
+        }
+
         .container {
-            padding: 30px 15px;
-            max-width: 600px;
-            margin: auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 80px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(224, 90, 109, 0.5);
+            max-width: 900px;
+            width: 90%;
+            border: 4px solid #ff9aa2;
+            animation: slideIn 1.5s ease-out;
             position: relative;
-            z-index: 2;
+            z-index: 10; 
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 50px; 
         }
+
+        .container:hover {
+            transform: scale(1.01);
+        }
+
         h1 {
-            color: #e91e63;
+            color: #e05a6d; 
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-family: 'Brush Script MT', cursive; 
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #d83a56;
+            margin-top: 40px;
+            margin-bottom: 25px;
             font-size: 2em;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
+
+        .nome-destaque {
+            font-weight: 700;
+            color: #d83a56;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
         p {
-            font-size: 1.05em;
-            line-height: 1.6;
-            color: #555;
-        }
-        .nossa-foto {
-            display: block;
-            max-width: 70%;   /* ALTERADO AQUI: Diminuído para 70% */
-            height: auto;      /* mantém proporção da foto */
-            border: 5px solid #fff;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
-            margin: 20px auto;
-
-            /* nitidez */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-        .video-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 560px; /* Largura máxima do vídeo */
-            margin: 25px auto;
-            background-color: #000; /* Fundo preto para o player */
-            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
-            border-radius: 12px;
-        }
-        .video-container video { /* Alterado de iframe para video */
-            width: 100%;
-            height: auto;
-            display: block;
-            border: none;
-        }
-        .assinatura {
-            margin-top: 25px;
+            font-size: 1.4em;
+            line-height: 1.7;
+            margin-bottom: 35px;
             font-style: italic;
-            font-size: 1em;
-            color: #e91e63;
         }
 
-        /* Corações animados */
-        .heart {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: #e91e63;
-            transform: rotate(-45deg);
-            animation: fall 8s infinite linear;
-            opacity: 0.7;
-            z-index: 1;
-        }
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: #e91e63;
-            border-radius: 50%;
-        }
-        .heart::before {
-            top: -7px;
-            left: 0;
-        }
-        .heart::after {
-            top: 0;
-            left: 7px;
+        .nossas-fotos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        @keyframes fall {
-            0% { top: -10%; }
-            100% { top: 110%; }
+        .nossas-fotos img {
+            width: 30%; 
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            object-fit: cover;
+            aspect-ratio: 1 / 1; 
+        }
+
+        .nossas-fotos img:hover {
+            transform: scale(1.05) rotate(2deg);
+            border: 3px solid #e05a6d;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .nossas-fotos img {
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+
+        .heart-pulse {
+            font-size: 4.5em; 
+            color: #ff6b81;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, opacity 0.5s;
+            animation: pulse 1.5s infinite;
+        }
+
+        .heart-pulse:hover {
+            transform: scale(1.3);
+            opacity: 0.9;
+        }
+
+        #mensagem-secreta {
+            margin-top: 40px;
+            padding: 20px;
+            border: 3px dashed #ff9aa2;
+            border-radius: 15px;
+            background-color: #ffeef0;
+            color: #d83a56;
+            font-weight: bold;
+            display: none; 
+            animation: fadeIn 1.5s forwards;
+            font-size: 1.5em;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-70px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .heart-float {
+            position: fixed; /* Mudei de 'absolute' para 'fixed' para flutuar pela tela toda */
+            color: #ff9aa2;
+            font-size: 2em;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: float 15s infinite linear;
+            z-index: 5;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-1200px) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>Para a Minha <span class="nome-destaque">Flávia</span>, O Meu Amor Eterno</h1>
+            
+            <p>
+                Você não é apenas a minha namorada, <span class="nome-destaque">Flávia</span>. Você é a minha paz, a melodia dos meus dias e a certeza de que o amor verdadeiro existe. 
+                Antes de você, eu apenas existia; com você, eu floresci.
+            </p>
 
-    <div class="container">
-        <h1>Para a melhor namorada do mundo</h1>
+            <h2>Nossos Momentos Inesquecíveis</h2>
+            
+            <div class="nossas-fotos">
+                <img src="https://onedrive.live.com/personal/fdaa1189c6a8c0cd/_api/v2.1/drives/FDAA1189C6A8C0CD/items/FDAA1189C6A8C0CD!seac53aa99d854ca1b2c07a226f48006d/thumbnails/0/c955x955/content?prefer=noredirect%2Cclosestavailablesize&cb=%22c%3A%7BEAC53AA9-9D85-4CA1-B2C0-7A226F48006D%7D%2C1%22&photossw=1&eh=application%3Aonedrive+web+consumer%2Cscenario%3ABrowsePhoto&it=originalScale%3Ac512x512%2CdownloadScale%3Ac955x955%2Cmigrated%3Atrue%2CscenarioName%3ArenderPhoto" alt="Flávia, Foto 1" title="Nossa primeira foto juntos" loading="lazy">
+                <img src="https://onedrive.live.com/personal/fdaa1189c6a8c0cd/_api/v2.1/drives/FDAA1189C6A8C0CD/items/FDAA1189C6A8C0CD!s1951a96f76064f7f92a5241f1e174c69/thumbnails/0/c955x955/content?prefer=noredirect%2Cclosestavailablesize&cb=%22c%3A%7B1951A96F-7606-4F7F-92A5-241F1E174C69%7D%2C1%22&photossw=1&eh=application%3Aonedrive+web+consumer%2Cscenario%3ABrowsePhoto&it=originalScale%3Ac512x512%2CdownloadScale%3Ac955x955%2Cmigrated%3Atrue%2CscenarioName%3ArenderPhoto" alt="Flávia, Foto 2" title="Dia especial" loading="lazy">
+                <img src="https://onedrive.live.com/personal/fdaa1189c6a8c0cd/_api/v2.1/drives/FDAA1189C6A8C0CD/items/FDAA1189C6A8C0CD!se9e8d60c29644f73be4ec11b518d8d66/thumbnails/0/c955x955/content?prefer=noredirect%2Cclosestavailablesize&cb=%22c%3A%7BE9E8D60C-2964-4F73-BE4E-C11B518D8D66%7D%2C1%22&photossw=1&eh=application%3Aonedrive+web+consumer%2Cscenario%3ABrowsePhoto&it=originalScale%3Ac512x512%2CdownloadScale%3Ac955x955%2Cmigrated%3Atrue%2CscenarioName%3ArenderPhoto" alt="Flávia, Foto 3" title="Eu e você" loading="lazy">
+            </div>
+            <p style="margin-top: 40px;">
+                Este pequeno canto é um pedacinho do meu coração para você. Ele guarda um segredo sobre o meu sentimento mais profundo. 
+                <span style="color: #e05a6d;">Clique no coração abaixo</span> para abrir a declaração!
+            </p>
+            
+            <div class="heart-pulse" onclick="mostrarMensagem()">
+                💖
+            </div>
 
-        <p>
-            Meu amor, às vezes eu paro e lembro daquele nosso primeiro encontro no shopping.
-            Aquele dia foi maravilhoso, mas eu mal sabia que era só o começo da melhor fase da minha vida.
-            Ter você como minha namorada é um presente. Eu te amo muito, muito mesmo!
-            Você me faz o homem mais feliz do mundom, Te amo, minha linda!
-        </p>
-
-        <img src="https://www.dropbox.com/scl/fi/0ovsdpez1p1ty17tpr8zp/547012091_791483056713076_3256838885005333063_n.jpg?rlkey=7dgl7flf18cyn3d35zr16az7b&st=v13j0ne9&raw=1" 
-             alt="Nossa Foto Especial" 
-             class="nossa-foto">
-
-        <div class="video-container">
-            <video controls preload="metadata"
-                   src="https://www.dropbox.com/scl/fi/8rjv7oq4vv9cpgs184y0y/Daniel-Caesar-Get-You-ft.Kali-Uchis-tradu-o.mp4?rlkey=rnzc4hma75wyuuc8br0mdtfh4&st=6eqqqdul&raw=1#t=42">
-                Seu navegador não suporta o player de vídeo.
-            </video>
+            <div id="mensagem-secreta">
+                <span class="nome-destaque">Flávia, o meu amor por você não tem fim.</span> Você é a razão do meu 'para sempre'. Quero viver cada novo amanhecer ao seu lado.
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 1.1em; font-style: normal; color: #aaa;">
+                Com a devoção de quem te ama incondicionalmente.
+            </p>
         </div>
-
-        <p class="assinatura">
-            Com todo o meu amor,<br>
-            Vini
-        </p>
     </div>
-
     <script>
-        // Função para criar corações animados
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 6 + 's';
-            heart.style.opacity = Math.random() * 0.5 + 0.5;
-            const size = Math.random() * 10 + 8;
-            heart.style.width = size + 'px';
-            heart.style.height = size + 'px';
-            document.body.appendChild(heart);
-            setTimeout(() => {
-                heart.remove();
-            }, 8000);
+        // JavaScript para a interatividade
+        function mostrarMensagem() {
+            const mensagemElemento = document.getElementById('mensagem-secreta');
+            
+            // Alterna a visibilidade da mensagem
+            if (mensagemElemento.style.display === 'none' || mensagemElemento.style.display === '') {
+                mensagemElemento.style.display = 'block'; // Mostra
+                
+            } else {
+                mensagemElemento.style.display = 'none'; // Esconde (caso ela clique de novo)
+            }
         }
-        setInterval(createHeart, 400);
+
+        // JavaScript para criar os corações flutuantes
+        function criarCoracoesFlutuantes() {
+            const numCoracoes = 25; 
+            const simbolos = ['💖', '💘', '❤️', '💞', '💕', '✨']; 
+            for (let i = 0; i < numCoracoes; i++) {
+                const coracao = document.createElement('div');
+                coracao.innerHTML = simbolos[Math.floor(Math.random() * simbolos.length)]; 
+                coracao.classList.add('heart-float');
+                
+                coracao.style.left = Math.random() * 100 + 'vw';
+                coracao.style.animationDelay = Math.random() * 15 + 's';
+                coracao.style.animationDuration = 10 + Math.random() * 10 + 's';
+                coracao.style.fontSize = 1.5 + Math.random() * 1.5 + 'em'; 
+                
+                document.body.appendChild(coracao);
+            }
+        }
+
+        window.onload = criarCoracoesFlutuantes;
     </script>
 
 </body>
